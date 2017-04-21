@@ -1,0 +1,299 @@
+/* General styles */
+* {
+	text-decoration: none;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+	width: 100%;
+}
+
+/* Animation_welcome */
+.animation h1 {
+	color: white;
+	font-weight: 300;
+	letter-spacing: 3px;
+	font-size: 50px;
+	text-transform: uppercase;
+}
+
+/* HEADER */
+.wrapper header {
+	width: 100%;
+	height: 650px;
+	background: url(../img/bg.jpg) center top;
+	background-size: cover;
+}
+
+.wrapper header nav .navigation {
+	padding: 0;
+	margin-top: 0;
+	text-align: center;
+}
+
+.wrapper header nav .navigation li {
+	display: inline-block;
+	position: relative;
+	padding: 20px;
+	text-transform: uppercase;
+	-webkit-animation: li_drop 7s;
+		 -o-animation: li_drop 7s;
+			animation: li_drop 7s;
+}
+
+.wrapper header nav .navigation li a,
+.wrapper header nav .navigation li a:visited {
+	color: white;
+}
+
+.wrapper header nav .navigation li .drop_mnu {
+	position: absolute;
+	top: 48px;
+	left: 0;
+	height: 0px;
+	width: 121px;
+	padding-left: 20px;
+	overflow: hidden;
+	text-align: left;
+	background-color: rgba(0,0,0,.5);
+}
+
+.wrapper header nav .navigation li .drop_mnu li {
+	display: block;
+	padding-left: 0;
+}
+
+.wrapper header nav .navigation li .drop_mnu li a {
+	transition: color .5s;
+}
+
+.wrapper header nav .navigation li .drop_mnu li a:hover {
+	color: aqua;
+}
+
+.wrapper header nav .navigation li.drop:hover>ul {
+	height: 248px;
+	transition: height 2s, ease-linear;
+}
+
+.wrapper header nav .navigation > li:before {
+	position: absolute;
+	top: calc(50% - 2.5px);
+	left: 0;
+	height: 3px;
+	width: 15px;
+	background-color: aqua;
+	visibility: hidden;
+	content: "";
+}
+
+.wrapper header nav .navigation li:hover:before {
+	visibility: visible;
+}
+
+/* FORM */
+.wrap_form {
+	width: 80%;
+	padding: 100px 0;
+	margin: 0 auto;
+	-webkit-animation: form_drop 7s;
+		 -o-animation: form_drop 7s;
+			animation: form_drop 7s;
+}
+
+.wrap_form h2 {
+	text-align: center;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.wrap_form form {
+	width: 300px;
+	text-align: right;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.wrap_form form .m_left {
+	margin-left: 20px;
+}
+
+.wrap_form form .center {
+	text-align: center;
+}
+
+/* ANIMATION */
+/* WELCOME */
+.animation {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	right: 0px;
+	width: 255px;
+	height: 140px;
+	padding: 10px;
+	border-radius: 30px;
+	-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+			box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+	text-align: center;
+	background: -webkit-radial-gradient(circle, rgba(255,0,0,.5), rgba(255,255,0,.5), rgba(0,255,0,.5));
+	background: -moz-radial-gradient(circle, rgba(255,0,0,.5), rgba(255,255,0,.5), rgba(0,255,0,.5));
+	background: -o-radial-gradient(circle, rgba(255,0,0,.5), rgba(255,255,0,.5), rgba(0,255,0,.5));
+	background: -ms-radial-gradient(circle, rgba(255,0,0,.5), rgba(255,255,0,.5), rgba(0,255,0,.5));
+	background: radial-gradient(circle, rgba(255,0,0,.5), rgba(255,255,0,.5), rgba(0,255,0,.5));
+	-webkit-animation: welcome 2s linear 0s 1, scale 1s linear 2s 2, rotate 1s linear 4s 1, back 2s linear 5s 1;
+		 -o-animation: welcome 2s linear 0s 1, scale 1s linear 2s 2, rotate 1s linear 4s 1, back 2s linear 5s 1;
+			animation: welcome 2s linear 0s 1, scale 1s linear 2s 2, rotate 1s linear 4s 1, back 2s linear 5s 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes welcome {
+	from {
+		visibility: visible;
+		top: 0px;
+		right: 0px;
+	}
+
+	to {
+		right: calc(50% - 110px);
+		top: calc(50% - 60px);
+		visibility: visible;
+	}
+  
+}
+
+@keyframes scale {
+	from {
+		-webkit-transform:scale(1);
+   		   -moz-transform:scale(1);
+    		-ms-transform:scale(1);
+     		 -o-transform:scale(1);
+        		transform:scale(1);
+	}
+
+	to {
+		-webkit-transform:scale(2);
+   		   -moz-transform:scale(2);
+    		-ms-transform:scale(2);
+     		 -o-transform:scale(2);
+        		transform:scale(2);
+	}
+  
+}
+
+@keyframes rotate {
+	from {
+		-webkit-transform:rotate(0deg);
+   		   -moz-transform:rotate(0deg);
+    		-ms-transform:rotate(0deg);
+     		 -o-transform:rotate(0deg);
+        		transform:rotate(0deg);
+	}
+
+	to {
+		-webkit-transform:rotate(360deg);
+   		   -moz-transform:rotate(360deg);
+    		-ms-transform:rotate(360deg);
+     		 -o-transform:rotate(360deg);
+        		transform:rotate(360deg);
+	}
+  
+}
+
+@keyframes back {
+	from {
+		right: calc(50% - 110px);
+		top: calc(50% - 60px);
+		visibility: visible;
+	}
+
+	to {
+		visibility: hidden;
+		top: 0px;
+		right: 0px;
+	}
+  
+}
+
+/* DROP */
+@keyframes li_drop {
+	0% {
+		transform-origin: top left;
+		animation-timing-function: ease-in-out;
+ 	}
+
+	20%, 60% {
+		-webkit-transform:rotate3d(0, 0, 1, 60deg);
+   		   -moz-transform:rotate3d(0, 0, 1, 60deg);
+    		-ms-transform:rotate3d(0, 0, 1, 60deg);
+     		 -o-transform:rotate3d(0, 0, 1, 60deg);
+        		transform:rotate3d(0, 0, 1, 60deg);
+		transform-origin: top left;
+		animation-timing-function: ease-in-out;
+	}
+
+	40%, 80% {
+		-webkit-transform:rotate3d(10, 20, 1, 80deg);
+   		   -moz-transform:rotate3d(10, 20, 1, 80deg);
+    		-ms-transform:rotate3d(10, 20, 1, 80deg);
+     		 -o-transform:rotate3d(10, 20, 1, 80deg);
+        		transform:rotate3d(10, 20, 1, 80deg);
+		transform-origin: top left;
+		animation-timing-function: ease-in-out;
+		opacity: 1;
+  	}
+
+	to {
+		transform: translate3d(0, 700px, 0);
+		opacity: 0;
+  	}
+}
+
+/* FORM */
+@keyframes form_drop {
+	0% {
+		transform-origin: top center;
+		animation-timing-function: ease-in-out;
+ 	}
+
+	20%, 60% {
+		-webkit-transform:rotate3d(0, 0, 1, 10deg);
+   		   -moz-transform:rotate3d(0, 0, 1, 10deg);
+    		-ms-transform:rotate3d(0, 0, 1, 10deg);
+     		 -o-transform:rotate3d(0, 0, 1, 10deg);
+        		transform:rotate3d(0, 0, 1, 10deg);
+		transform-origin: top center;
+		animation-timing-function: ease-in-out;
+	}
+
+	40%, 80% {
+		-webkit-transform:rotate3d(0, 0, 1, -10deg);
+   		   -moz-transform:rotate3d(0, 0, 1, -10deg);
+    		-ms-transform:rotate3d(0, 0, 1, -10deg);
+     		 -o-transform:rotate3d(0, 0, 1, -10deg);
+        		transform:rotate3d(0, 0, 1, -10deg);
+		transform-origin: top center;
+		animation-timing-function: ease-in-out;
+		opacity: 1;
+  	}
+
+	to {
+		-webkit-transform:translate3d(0, 700px, 0);
+   		   -moz-transform:translate3d(0, 700px, 0);
+    		-ms-transform:translate3d(0, 700px, 0);
+     		 -o-transform:translate3d(0, 700px, 0);
+        		transform:translate3d(0, 700px, 0);
+		opacity: 0;
+  	}
+}
+
+
