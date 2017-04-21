@@ -1,41 +1,31 @@
 /* General styles */
-* {
-	text-decoration: none;
-}
+* {text-decoration: none;}
 body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
-	font-family: "Open Sans", sans-serif;
-}
-.wrapper {
-	width: 100%;
-}
+	font-family: "Open Sans", sans-serif;}
+.wrapper {width: 100%;}
 
 /* HEADER */
 .wrapper header {
 	width: 100%;
 	height: 650px;
 	background: url(../img/bg.jpg) center top;
-	background-size: cover;
-}
+	background-size: cover;}
 .wrapper header nav .navigation {
 	padding: 0;
 	margin-top: 0;
-	text-align: center;
-}
+	text-align: center;}
 .wrapper header nav .navigation li {
 	display: inline-block;
 	position: relative;
 	padding: 20px;
-	text-transform: uppercase;
-}
+	text-transform: uppercase;}
 .wrapper header nav .navigation li a,
-.wrapper header nav .navigation li a:visited {
-	color: white;
-}
+.wrapper header nav .navigation li a:visited {color: white;}
 .wrapper header nav .navigation li .drop_mnu {
 	position: absolute;
 	top: 48px;
@@ -45,22 +35,15 @@ body {
 	padding-left: 20px;
 	overflow: hidden;
 	text-align: left;
-	background-color: rgba(0,0,0,.5);
-}
+	background-color: rgba(0,0,0,.5);}
 .wrapper header nav .navigation li .drop_mnu li {
 	display: block;
-	padding-left: 0;
-}
-.wrapper header nav .navigation li .drop_mnu li a {
-	transition: color .5s;
-}
-.wrapper header nav .navigation li .drop_mnu li a:hover {
-	color: aqua;
-}
+	padding-left: 0;}
+.wrapper header nav .navigation li .drop_mnu li a {transition: color .5s;}
+.wrapper header nav .navigation li .drop_mnu li a:hover {color: aqua;}
 .wrapper header nav .navigation li.drop:hover>ul {
 	height: 248px;
-	transition: height 2s, ease-linear;
-}
+	transition: height 2s, ease-linear;}
 .wrapper header nav .navigation > li:before {
 	position: absolute;
 	top: calc(50% - 2.5px);
@@ -69,36 +52,26 @@ body {
 	width: 15px;
 	background-color: aqua;
 	visibility: hidden;
-	content: "";
-}
-.wrapper header nav .navigation li:hover:before {
-	visibility: visible;
-}
+	content: "";}
+.wrapper header nav .navigation li:hover:before {visibility: visible;}
 
 /* FORM */
 .wrap_form {
 	width: 80%;
 	padding: 100px 0;
-	margin: 0 auto;
-}
+	margin: 0 auto;}
 .wrap_form h2 {
 	text-align: center;
 	font-weight: 300;
 	text-transform: uppercase;
-	letter-spacing: 3px;
-}
+	letter-spacing: 3px;}
 .wrap_form form {
 	width: 300px;
 	text-align: right;
 	margin: 0 auto;
-	margin-top: 20px;
-}
-.wrap_form form .m_left {
-	margin-left: 20px;
-}
-.wrap_form form .center {
-	text-align: center;
-}
+	margin-top: 20px;}
+.wrap_form form .m_left {margin-left: 20px;}
+.wrap_form form .center {text-align: center;}
 
 
 
