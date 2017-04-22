@@ -1,0 +1,74 @@
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.wrap_img {
+	width: 50%;
+	text-align: center;
+	float: left;
+}
+
+.bgc_img {
+	width: 272px;
+	height: 380px;
+	margin: 100px 50px;
+	background: url(../img/front.jpg);
+	transition: background 2s, transform 3s;
+}
+
+.bgc_img:nth-child(odd) {
+	float: left;
+}
+
+.bgc_img:nth-child(even) {
+	float: right;
+}
+
+.animation_1:hover {
+	background: url(../img/back.jpg);
+	perspective: 1200;
+	-webkit-transform:rotate3d(20,0,0,180deg);
+   	   -moz-transform:rotate3d(20,0,0,180deg);
+  		-ms-transform:rotate3d(20,0,0,180deg);
+    	 -o-transform:rotate3d(20,0,0,180deg);
+      		transform:rotate3d(20,0,0,180deg);
+}
+
+.animation_2:hover {
+	background: url(../img/back.jpg);
+	perspective: 1200;
+	-webkit-transform:rotate3d(0,2,0,180deg);
+   	   -moz-transform:rotate3d(0,2,0,180deg);
+  		-ms-transform:rotate3d(0,2,0,180deg);
+    	 -o-transform:rotate3d(0,2,0,180deg);
+      		transform:rotate3d(0,2,0,180deg);
+}
+
+.animation_3:hover {
+	background: url(../img/back.jpg);
+	perspective: 1200;
+	-webkit-transform:rotate3d(1,1,0,180deg);
+   	   -moz-transform:rotate3d(1,1,0,180deg);
+  		-ms-transform:rotate3d(1,1,0,180deg);
+    	 -o-transform:rotate3d(1,1,0,180deg);
+      		transform:rotate3d(1,1,0,180deg);
+}
+
+.animation_4:hover {
+	background: url(../img/back.jpg);
+	perspective: 1200;
+	-webkit-transform:rotate3d(2,3,1,180deg);
+   	   -moz-transform:rotate3d(2,3,1,180deg);
+  		-ms-transform:rotate3d(2,3,1,180deg);
+    	 -o-transform:rotate3d(2,3,1,180deg);
+      		transform:rotate3d(2,3,1,180deg);
+}
