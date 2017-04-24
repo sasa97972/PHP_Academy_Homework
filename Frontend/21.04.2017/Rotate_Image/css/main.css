@@ -8,44 +8,55 @@ body {
 
 .wrapper {
 	width: 1000px;
-	margin: 0 auto;
+	margin: 50px auto;
+}
+
+.wrap_content {
+	width: 50%;
+	margin-bottom: 50px;
 }
 
 .wrap_img {
-	width: 50%;
-	text-align: center;
+	position: relative;
+	width: 250px;
+	height: 384px;
+	transition: transform 2s;
+	transform-style: preserve-3d;
+}
+
+.wrap_img .bgc_img_front,
+.wrap_img .bgc_img_back {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.wrap_img .bgc_img_front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.card .card-back {
+	transform: rotateY(180deg);
+}
+
+.wrap_content:nth-child(odd) {
 	float: left;
 }
 
-.bgc_img {
-	width: 272px;
-	height: 380px;
-	margin: 100px 50px;
-	background: url(../img/front.jpg);
-	transition: background 2s, transform 3s;
-}
-
-.bgc_img:nth-child(odd) {
-	float: left;
-}
-
-.bgc_img:nth-child(even) {
+.wrap_content:nth-child(even) {
 	float: right;
 }
 
 .animation_1:hover {
-	background: url(../img/back.jpg);
-	perspective: 1200;
-	-webkit-transform:rotate3d(20,0,0,180deg);
-   	   -moz-transform:rotate3d(20,0,0,180deg);
-  		-ms-transform:rotate3d(20,0,0,180deg);
-    	 -o-transform:rotate3d(20,0,0,180deg);
-      		transform:rotate3d(20,0,0,180deg);
+	-webkit-transform:rotate3d(2,0,0,180deg);
+   	   -moz-transform:rotate3d(2,0,0,180deg);
+  		-ms-transform:rotate3d(2,0,0,180deg);
+    	 -o-transform:rotate3d(2,0,0,180deg);
+      		transform:rotate3d(2,0,0,180deg);
 }
 
 .animation_2:hover {
-	background: url(../img/back.jpg);
-	perspective: 1200;
 	-webkit-transform:rotate3d(0,2,0,180deg);
    	   -moz-transform:rotate3d(0,2,0,180deg);
   		-ms-transform:rotate3d(0,2,0,180deg);
@@ -54,8 +65,6 @@ body {
 }
 
 .animation_3:hover {
-	background: url(../img/back.jpg);
-	perspective: 1200;
 	-webkit-transform:rotate3d(1,1,0,180deg);
    	   -moz-transform:rotate3d(1,1,0,180deg);
   		-ms-transform:rotate3d(1,1,0,180deg);
@@ -64,8 +73,6 @@ body {
 }
 
 .animation_4:hover {
-	background: url(../img/back.jpg);
-	perspective: 1200;
 	-webkit-transform:rotate3d(2,3,1,180deg);
    	   -moz-transform:rotate3d(2,3,1,180deg);
   		-ms-transform:rotate3d(2,3,1,180deg);
