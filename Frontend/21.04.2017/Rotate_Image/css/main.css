@@ -6,9 +6,19 @@ body {
 }
 
 .wrapper {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-flow: row wrap;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	width: 1000px;
 	margin: 50px auto;
 }
@@ -18,8 +28,12 @@ body {
 	width: 272px;
 	height: 380px;
 	margin-bottom: 50px;
+	-webkit-transition: -webkit-transform 2s;
+	transition: -webkit-transform 2s;
 	transition: transform 2s;
-	transform-style: preserve-3d;
+	transition: transform 2s, -webkit-transform 2s;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
 }
 
 .wrap_img .bgc_img_front,
@@ -29,47 +43,42 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
 }
 
 .wrap_img .bgc_img_front {
 	background: url(../img/front.jpg);
-	transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
+	        transform: rotateY(0deg);
 }
 
 .wrap_img .bgc_img_back {
 	background: url(../img/back.jpg);
-	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	        transform: rotateY(180deg);
 }
 
 .animation_1:hover {
 	-webkit-transform:rotate3d(1,0,0,180deg);
-   	   -moz-transform:rotate3d(1,0,0,180deg);
   		-ms-transform:rotate3d(1,0,0,180deg);
-    	 -o-transform:rotate3d(1,0,0,180deg);
       		transform:rotate3d(1,0,0,180deg);
 }
 
 .animation_2:hover {
 	-webkit-transform:rotate3d(0,2,0,180deg);
-   	   -moz-transform:rotate3d(0,2,0,180deg);
   		-ms-transform:rotate3d(0,2,0,180deg);
-    	 -o-transform:rotate3d(0,2,0,180deg);
       		transform:rotate3d(0,2,0,180deg);
 }
 
 .animation_3:hover {
 	-webkit-transform:rotate3d(1,1,0,180deg);
-   	   -moz-transform:rotate3d(1,1,0,180deg);
   		-ms-transform:rotate3d(1,1,0,180deg);
-    	 -o-transform:rotate3d(1,1,0,180deg);
       		transform:rotate3d(1,1,0,180deg);
 }
 
 .animation_4:hover {
 	-webkit-transform:rotate3d(2,3,1,180deg);
-   	   -moz-transform:rotate3d(2,3,1,180deg);
   		-ms-transform:rotate3d(2,3,1,180deg);
-    	 -o-transform:rotate3d(2,3,1,180deg);
       		transform:rotate3d(2,3,1,180deg);
 }
