@@ -23,16 +23,16 @@ var r = prompt('Введите радиус цилиндра', 0);
 var h = prompt('Введите высоту цилиндра', 0);
 r = parseInt(r);
 h = parseInt(h);
-var amount = Math.PI * Math.pow(r,2) * h;
+var capacity = Math.PI * Math.pow(r,2) * h;
 var area = 2 * Math.PI * r * (r + h);
-document.write("Объем цилиндра = " + amount + "<br>");
+document.write("Объем цилиндра = " + capacity + "<br>");
 document.write("Площадь цилиндра = " + area);
 
 document.write("<hr>");
 
-//4.1
-var A = prompt("Введите первое чилсо: ");
-var B = prompt("Введите второе чилсо, которое должно быть больше чем первое: ");
+//4
+var A = prompt("Введите первое число: ");
+var B = prompt("Введите второе число, которое должно быть больше чем первое: ");
 A = parseInt(A);
 B = parseInt(B);
 if (A > B) {
