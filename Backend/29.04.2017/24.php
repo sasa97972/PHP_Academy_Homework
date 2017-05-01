@@ -1,6 +1,7 @@
 <?php
-$count = 0;
+
 if (isset($_GET['form_1'])) {
+    $count = 0;
     $numAll = str_split((string)$_GET['number_1']);
     $num = $_GET['number_2'];
     foreach ($numAll as $item) {
@@ -8,7 +9,6 @@ if (isset($_GET['form_1'])) {
             $count++;
         }
     }
-    $res = true;
 }
 ?>
 
@@ -20,6 +20,6 @@ if (isset($_GET['form_1'])) {
     <input type="submit" name="form_1">
 </form>
 
-<?php if (isset($res)): ?>
+<?php if (isset($count)): ?>
     <h3>Количество вхождений = <?= $count ?></h3>
 <?php endif; ?>

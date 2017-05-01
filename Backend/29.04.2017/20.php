@@ -1,6 +1,4 @@
 <?php
-$str = "";
-for ($i = 0; $i < 20; $i++) {
-    $str .= 'x';
-    echo $str.'<br>';
+for ($i = 1; $i <= 20; $i++) {
+    echo str_repeat('x', $i).'<br>';
 }
