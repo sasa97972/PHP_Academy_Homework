@@ -9,20 +9,16 @@ document.write((x = y - x++ * z ) + '<br>');
 document.write("<hr>");
 
 //2
-var a_1 = prompt('Введите первое число', 0);
-var a_2 = prompt('Введите второе число', 0);
-a_1 = parseInt(a_1);
-a_2 = parseInt(a_2);
+var a_1 = parseInt(prompt('Введите первое число', 0));
+var a_2 = parseInt(prompt('Введите второе число', 0));
 var avg = (a_1 + a_2)/2;
 document.write("Среднее арифметическое = " + avg);
 
 document.write("<hr>");
 
 //3
-var r = prompt('Введите радиус цилиндра', 0);
-var h = prompt('Введите высоту цилиндра', 0);
-r = parseInt(r);
-h = parseInt(h);
+var r = parseInt(prompt('Введите радиус цилиндра', 0));
+var h = parseInt(prompt('Введите высоту цилиндра', 0));
 var capacity = Math.PI * Math.pow(r,2) * h;
 var area = 2 * Math.PI * r * (r + h);
 document.write("Объем цилиндра = " + capacity + "<br>");
@@ -31,10 +27,8 @@ document.write("Площадь цилиндра = " + area);
 document.write("<hr>");
 
 //4
-var A = prompt("Введите первое число: ");
-var B = prompt("Введите второе число, которое должно быть больше чем первое: ");
-A = parseInt(A);
-B = parseInt(B);
+var A = parseInt(prompt("Введите первое число: "));
+var B = parseInt(prompt("Введите второе число, которое должно быть больше чем первое: "));
 if (A > B) {
 	document.write("Второе число должно быть больше чем первое!")
 } else {
