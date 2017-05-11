@@ -22,7 +22,6 @@ body h2 {
 	text-align: center;
 	font-weight: 100;
 	letter-spacing: 5px;
-	-webkit-transition: color 1.5s;
 	transition: color 1.5s;
 }
 
@@ -48,27 +47,19 @@ body h2 {
 body .box,
 body .box2 {
 	width: 1000px;
-	margin: 0 auto 50px;
-	padding: 10px;
-	border: 2px solid silver;
-	-webkit-border-radius: 5px;
-	        border-radius: 5px;
-	-webkit-transition: -webkit-transform 2s;
-	transition: -webkit-transform 2s;
-	transition: transform 2s;
-	transition: transform 2s, -webkit-transform 2s; 
-	display: -webkit-box; 
-	display: -webkit-flex; 
-	display: -ms-flexbox; 
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-justify-content: space-around;
 	    -ms-flex-pack: distribute;
 	        justify-content: space-around;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
 	-webkit-flex-flow: row wrap;
-	    -ms-flex-flow: row wrap;
-	        flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	margin: 0 auto 50px;
+	padding: 10px;
+	border: 2px solid silver;
+	border-radius: 5px;
 }
 
 body .box:hover,
@@ -79,96 +70,71 @@ body .box2:hover {
 }
 
 body .item {
-	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 	padding: 50px;
 	border: 2px solid silver;
-	-webkit-border-radius: 5px;
-	        border-radius: 5px;
-	-webkit-transition: -webkit-transform 2s;
-	transition: -webkit-transform 2s;
-	transition: transform 2s;
-	transition: transform 2s, -webkit-transform 2s;
+	border-radius: 5px;
 	-webkit-transform-style: preserve-3d;
 	        transform-style: preserve-3d;
 	font-size: 20px;
 }
 
-body .item:hover {
-	-webkit-transform: rotate3d(0, 1, 0, 360deg);
-	        transform: rotate3d(0, 1, 0, 360deg);
-}
-
 body .box .class1 {
-	-webkit-box-ordinal-group: 4;
 	-webkit-order: 3;
-	    -ms-flex-order: 3;
-	        order: 3;
+	-ms-flex-order: 3;
+	    order: 3;
 }
 
 body .box .class2 {
-	-webkit-box-ordinal-group: 3;
 	-webkit-order: 2;
-	    -ms-flex-order: 2;
-	        order: 2;
+	-ms-flex-order: 2;
+	    order: 2;
 }
 
 body .box .class3 {
-	-webkit-box-ordinal-group: 2;
 	-webkit-order: 1;
-	    -ms-flex-order: 1;
-	        order: 1;
+	-ms-flex-order: 1;
+	    order: 1;
 }
 
 body .box2 .p1,
 body .box2 .p2 {
-	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	    justify-content: center;
 	margin-left: 10px;
 }
 
 body .box2 .p1 {
-	-webkit-box-flex: 2;
 	-webkit-flex-grow: 2;
-	    -ms-flex-positive: 2;
-	        flex-grow: 2;
+	-ms-flex-positive: 2;
+	    flex-grow: 2;
 }
 
 body .box2 .p2 {
-	-webkit-box-flex: 1;
 	-webkit-flex-grow: 1;
-	    -ms-flex-positive: 1;
-	        flex-grow: 1;
+	-ms-flex-positive: 1;
+	    flex-grow: 1;
 }
 
 body .grid {
-	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-align: end;
 	-webkit-align-items: flex-end;
-	    -ms-flex-align: end;
-	        align-items: flex-end;
+	-ms-flex-align: end;
+	    align-items: flex-end;
 	width: 1000px;
 	margin: 0 auto 50px;
 	padding: 10px;
 	border: 2px solid silver;
-	-webkit-border-radius: 5px;
-	        border-radius: 5px;
-	-webkit-transition: -webkit-transform 2s;
-	transition: -webkit-transform 2s;
-	transition: transform 2s;
-	transition: transform 2s, -webkit-transform 2s; 
+	border-radius: 5px;
 	height: 400px;
 }
 
 body .grid div {
-	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -177,10 +143,30 @@ body .grid div {
 	margin-left: 5px;
 }
 
+body .grid,
+body .item,
+body .box,
+body .box2 {
+	transition: -webkit-transform 2s;
+	transition: transform 2s;
+	transition: transform 2s, -webkit-transform 2s;
+}
+
+body .grid2 {
+	-webkit-flex-flow: row-reverse wrap;
+	-ms-flex-flow: row-reverse wrap;
+	flex-flow: row-reverse wrap;
+}
+
 body .grid:hover {
 	-webkit-transform: scale(1.1);
 	    -ms-transform: scale(1.1);
 	        transform: scale(1.1);
+}
+
+body .item:hover {
+	-webkit-transform: rotate3d(0, 1, 0, 360deg);
+	        transform: rotate3d(0, 1, 0, 360deg);
 }
 
 body .grid div:hover {
@@ -232,22 +218,12 @@ body .grid div:hover {
   }
 }
 
-body .grid2 {
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: reverse;
-	-webkit-flex-flow: row-reverse wrap;
-	    -ms-flex-flow: row-reverse wrap;
-	        flex-flow: row-reverse wrap;
-}
-
 /* ---------- LAST TASK  ---------- */
 .wrapper_2 {
 	width: 100%;
 	height: 100%;
 	padding: 50px 0;
 	color: white;
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.5)), to(rgba(0,0,0,.5))), url(../img/bg2.jpg) no-repeat center center;
-	background: -webkit-linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../img/bg2.jpg) no-repeat center center;
 	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../img/bg2.jpg) no-repeat center center;
 	background-size: cover;
 }
@@ -257,9 +233,7 @@ body .grid2 {
 	width: 1000px;
 	padding: 10px;
 	margin: 20px auto;
-	-webkit-border-radius: 5px;
-	        border-radius: 5px;
-	margin-bottom: 20px;
+	border-radius: 5px;
 	border: 2px solid silver;
 }
 
@@ -272,47 +246,37 @@ body .grid2 {
 .wrapper_2 .wrapContent {
 	width: 1024px;
 	margin: 20px auto;
-	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
 	-webkit-flex-flow: row nowrap;
-	    -ms-flex-flow: row nowrap;
-	        flex-flow: row nowrap;
-	-webkit-box-pack: justify;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between; 
-	margin-bottom: 20px;
+	-ms-flex-pack: justify;
+	    justify-content: space-between; 
 }
 
 .wrapper_2 .wrapContent nav,
 .wrapper_2 .wrapContent article,
 .wrapper_2 .wrapContent aside {
-	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
 	-webkit-flex-flow: column wrap;
-	    -ms-flex-flow: column wrap;
-	        flex-flow: column wrap;
+	-ms-flex-flow: column wrap;
+	flex-flow: column wrap;
 	padding: 20px;
 	border: 2px solid silver;
 	margin-left: 1px;
 }
 
 .wrapper_2 .wrapContent nav {
-	-webkit-border-radius: 5px 0 0 5px;
-	        border-radius: 5px 0 0 5px;
+	border-radius: 5px 0 0 5px;
 }
 
 .wrapper_2 .wrapContent aside {
-	-webkit-border-radius: 0 5px 5px 0;
-	        border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 5px 0;
 }
 
 .wrapper_2 .wrapContent nav ul {
