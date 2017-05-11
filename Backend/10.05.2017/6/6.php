@@ -4,29 +4,22 @@ if (isset($_POST['form_1'])) {
 }
 $arr = array_diff(scandir('gallery/'), ['.','..']);
 $count = 1;
-$number = 1;
-$width = "1000px";
-$height = "500px";
 if (isset($_POST['order'])) {
-    if ($_POST['order'] == 4) {
-        $count = 4;
-        $number = 4;
-        $width = "300px";
-        $height = "150px";
-    }
-    if ($_POST['order'] == 3) {
-        $count = 3;
-        $number = 3;
-        $width = "500px";
-        $height = "250px";
-    }
-    if ($_POST['order'] == 2) {
-        $count = 2;
-        $number = 2;
-        $width = "700px";
-        $height = "350px";
-    }
+   switch ($_POST['order']) {
+       case 2:
+           $count = 2;
+           break;
+       case 3:
+           $count = 3;
+           break;
+       case 4:
+           $count = 4;
+           break;
+   }
 }
+$width = 1200 / $count;
+$height = 600 / $count;
+$number = $count;
 ?>
 <form action="" method="post" enctype="multipart/form-data">
     <label for="img">Выберите картинку для загрузки</label>
@@ -45,7 +38,7 @@ if (isset($_POST['order'])) {
     <?php foreach ($arr as $source):
         if ($count % $number * 2 == 0) {echo "</tr>";}
         if ($count % $number == 0) {echo "<tr>";}
-        echo "<td>"."<img src=\"gallery/$source\" alt=\"image\" width=\"$width\" height=\"$height\">"."</td>";
+        echo "<td>"."<img src=\"gallery/{$source}\" alt=\"image\" width=\"{$width}px\" height=\"{$height}px\">"."</td>";
         $count++;
     endforeach; ?>
 </table>
