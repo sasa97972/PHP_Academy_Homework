@@ -3,7 +3,7 @@ function rhombus(size)
 	var mid = size/2;
 	var count = 0;
 
-	for(var i = 0; i < size/2; i++){
+	for(var i = 0; i < size/4 - 1; i++){
 	    for(var j = 0; j < size; j++) {
 	    	if (j == mid && (i == 0 || i == mid - 1)) {
 	    		document.write("*");
@@ -13,18 +13,11 @@ function rhombus(size)
 	    		document.write("&nbsp&nbsp");
 	    	}
 	    }
-	    if (count < size/4 - 1) {
-	    	count++;
-	    } else {
-	    	break;
-	    }
+	    count++;
 	    document.write("<br>");
 	}
 
-	document.write("<br>");
-	count++;
-
-	for(var i = 0; i < size/4+1; i++){
+	for(var i = 0; i < size/4; i++){
 	    for(var j = 0; j < size; j++) {
 	    	if (j == mid && i == 0) {
 	    		document.write("*");
