@@ -1,6 +1,6 @@
 function rhombus(size)
 {
-	var mid = size/2;
+	var mid = parseInt(size/2);
 	var count = 0;
 	var number = 0;
 
