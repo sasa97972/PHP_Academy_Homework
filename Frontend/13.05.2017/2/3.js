@@ -2,7 +2,7 @@ function triangle(size)
 {
 	var mid = size/2;
 	var count = 0;
-	for(var i = 0; i < size/2; i++){
+	for(var i = 0; i < mid; i++){
 	    for(var j = 0; j < size; j++) {
 	    	if (j >= mid - count && j <= mid + count) {
 	    		document.write("*");

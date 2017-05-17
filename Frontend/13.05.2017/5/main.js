@@ -23,11 +23,12 @@ function info(a)
 	}
 	isSimple(a);
 	var div = "Число делится без остачи, на:";
-	if (a % 2 == 0) { div += " 2" }
-	if (a % 3 == 0) { div += " 3" }
-	if (a % 5 == 0) { div += " 5" }
-	if (a % 6 == 0) { div += " 6" }
-	if (a % 9 == 0) { div += " 9" }
+	divNumber = [2, 3, 5, 6, 9];
+	for(var numb in divNumber) {
+		if (a % divNumber[numb] == 0) {
+			div += " " + divNumber[numb];
+		}
+	}
 	document.write(div);
 }
 

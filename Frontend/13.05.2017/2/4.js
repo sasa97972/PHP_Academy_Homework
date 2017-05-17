@@ -2,35 +2,27 @@ function rhombus(size)
 {
 	var mid = size/2;
 	var count = 0;
+	var number = 0;
 
-	for(var i = 0; i < size/4 - 1; i++){
-	    for(var j = 0; j < size; j++) {
-	    	if (j == mid && (i == 0 || i == mid - 1)) {
-	    		document.write("*");
-	    	} else if (j >= mid - count && j <= mid + count) {
+	for(var i = 0; i < size + 1; i++, count++){
+	    for(var j = 0; j < size + 1; j++) {
+	    	if (j >= mid - number && j <= mid + number) {
 	    		document.write("*");
 	    	} else {
 	    		document.write("&nbsp&nbsp");
 	    	}
 	    }
-	    count++;
-	    document.write("<br>");
-	}
-
-	for(var i = 0; i < size/4; i++){
-	    for(var j = 0; j < size; j++) {
-	    	if (j == mid && i == 0) {
-	    		document.write("*");
-	    	} else if (j >= mid - count && j <= mid + count) {
-	    		document.write("*");
-	    	} else {
-	    		document.write("&nbsp&nbsp");
-	    	}
+	    if (count < mid) {
+	    	number++;
+	    } else {
+	    	number--;
 	    }
-	    count--;
 	    document.write("<br>");
 	}
 }
-var size = +prompt("Введите размер ромба", "36");
+
+var size = +prompt("Введите размер ромба", "24");
 rhombus(size);
+
+
 
