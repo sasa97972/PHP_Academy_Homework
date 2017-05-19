@@ -2,18 +2,21 @@ function addition (a, b)
 {
 	var result = a + b;
 	document.write(a + " + " + b + " = " + result);
+	return result;
 }
 
 function subtraction (a, b) 
 {
 	var result = a - b;
 	document.write(a + " - " + b + " = " + result);
+	return result;
 }
 
 function multiplication (a, b) 
 {
 	var result = a * b;
 	document.write(a + " * " + b + " = " + result);
+	return result;
 }
 
 function division (a, b) 
@@ -23,6 +26,7 @@ function division (a, b)
 	}
 	var result = a / b;
 	document.write(a + " / " + b + " = " + result);
+	return result;
 }
 
 var a = +prompt("Введите первое число", "0");

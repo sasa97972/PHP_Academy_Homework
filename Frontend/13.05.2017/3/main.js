@@ -4,6 +4,7 @@ function Calculate (a, b, c) {
 	document.write("Второе число: " + b + "<br>");
 	document.write("Третье число: " + c + "<br>");
 	document.write("Среднее арифметическое: " + result);
+	return result;
 }
 
 var a = +prompt("Введите первое число", "0");

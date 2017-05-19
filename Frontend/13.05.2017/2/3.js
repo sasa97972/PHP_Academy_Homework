@@ -1,6 +1,6 @@
 function triangle(size)
 {
-	var mid = size/2;
+	var mid = parseInt(size/2);
 	var count = 0;
 	for(var i = 0; i < mid; i++){
 	    for(var j = 0; j < size; j++) {
