@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 26.05</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,800" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<h1 class="head_desc">Домашнее задание 26.05.2017</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#task1">Задание №1</a></li>
+				<li><a href="#task2">Задание №2</a></li>
+				<li><a href="#task3">Задание №3</a></li>
+				<li><a href="#task4">Задание №4</a></li>
+				<li><a href="#task5">Задание №№5-7</a></li>
+				<li><a href="#task8">Задание №8</a></li>
+				<li><a href="#task9">Задание №9</a></li>
+				<li><a href="#task10">Задание №10</a></li>
+				<li><a href="#task11">Задание №11</a></li>
+				<li><a href="#task12">Задание №12</a></li>
+				<li><a href="#task12">Тесты</a></li>
+			</ul>
+			<div class="toggle_mnu">
+				<span class='sandwich'>
+					<span class='sw_topper'></span>
+					<span class='sw-bottom'></span>
+					<span class='sw-footer'></span>
+				</span>
+			</div>
+		</nav>
+		<section>
+			<div class="task_desc" id="task1"><h2>Задание №1</h2></div>
+			<div class="task">
+				<h2>Что будет выведено в консоль ?</h2>
+				<code>
+					var text = 'outside';<br>
+					function logIt(){<br>
+					 console.log(text);<br>
+					 var text = 'inside';<br>
+					};<br>
+					logIt();
+				</code>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					На экран будет выведено: "undefined" ! <br>
+					Т.к сначала пробигается по коду compiler, он доходит до функции console.log видит, переменную text, находит её внутри функции, но поскольку присвоение этой переменной происходит после console.log, то на момент вывода в консоль эта переменная не имеет значение.
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="task_desc" id="task2"><h2>Задание №2</h2></div>
+			<div class="task">
+				<h2>Что будет выведено в консоль ?</h2>
+				<code>
+					(function() { <br>
+ 					var a = b = 5; <br>
+					})(); <br>
+				</code>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					В консоль не выведется ничего, т.к. нету функции вывода. <br>
+					В результате кода, переменной <b><i>а</i></b> и <b><i>b</i></b> будет присвоено значение 5. При этом <b><i>b</i></b> - будет глобальной переменной.
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="task_desc" id="task3"><h2>Задание №3</h2></div>
+			<div class="task">
+				<h2>Что будет выведено в консоль ?</h2>
+				<code>
+					function test() { <br> 
+						console.log(a); <br> 
+						console.log(foo()); <br> 
+						var a = 1; <br> 
+						function foo() { <br> 
+							return 2; <br> 
+						} <br> 
+					} <br> 
+					test(); <br>
+				</code>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					console.log(a); - выведет undefined; <br>
+					console.log(foo()); - выведет 2 <br>
+					Так произойдет потому, что функции имеют приоритет выше чем переменные. Compiler перетаскивает наверх (образно) кода только объвление переменной, а функцию - полностью.
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="task_desc" id="task4"><h2>Задание №4</h2></div>
+			<div class="task">
+				<h2>Что будет выведено в консоль ?</h2>
+				<code>
+					myname = "global"; <br>
+					function func() { <br>
+					 console.log(myname); <br>
+					 var myname = "local"; <br>
+					 console.log(myname); <br>
+					} <br>
+					func(); <br>
+				</code>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					В этом задании результат будет абсолютно таким же как и в первом задании. При первом выводе будет выведено "undefined" при втором выводе будет выведено "local" т.к. сначала объявление, а потом уже присвоение + функция имеет свой scope, по этому до глобальной переменной мы не доходим.
+				</div>
+			</div>
+		</section>
+		<section class="column">
+			<div class="task_desc" id="task5"><h2>Задания №5,6,7</h2></div>
+			<div class="task">
+				<span>
+					5. С помощью какой конструкции языка можно управлять потоком выполнения скрипта и отслеживать ошибки? <br>
+					6. Что такое глобальные переменные ? Как они создаются ? Какие проблемы связаны с использованием глобальных переменных? <br>
+					7. Что такое замыкания (closure) в JavaScript? <br>
+				</span>
+			</div>
+			<div class="answer">
+				<div class="slide">Узнать ответ</div>
+				<div class="answer_desc">
+					5. В Java Script можно управлять потоком выполнения скрипта и отслеживать ошибки с помощью конструкции <b><i>try...catch</i></b>. <br>
+					6. Глобальными называют переменные и функции, которые не находятся внутри какой-то функции. То есть, иными словами, если переменная или функция не находятся внутри конструкции function, то они – «глобальные». Проблема, которая связанна с глобальными переменными это - <b><i>shadowing</i></b>. <br>
+					7. Замыкание – это функция вместе со всеми внешними переменными, которые ей доступны, но обычно, говоря «замыкание функции», подразумевают не саму эту функцию, а именно внешние переменные.
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="task_desc" id="task8"><h2>Задание №8</h2></div>
+			<div class="task">
+				<h2>Какая разница между двумя способами<br>
+				задания функции ?</h2>
+				<code>
+					var foo = function(){ <br>
+ 						// Some code <br>
+					}; <br>
+					function bar(){ <br>
+ 						// Some code <br>
+					}; <br>
+				</code>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					В первом способе, мы объвляем переменную, и присваиваем ей анонимную функцию, обратится к этой функции мы можем так: <b><i>foo()</i></b>; <br>
+					Во втором способе, мы объявляем обычную именнованую функцию, обратится к функции можем так: <b><i>bar()</i></b>;
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="task_desc" id="task9"><h2>Задание №9</h2></div>
+			<div class="task">
+				<h2>Что будет выведено в консоль ?</h2>
+				<code>
+					(function() { <br>
+					 baz = 5; <br>
+					 var bar = 10; <br>
+					})(); <br>
+					console.log(baz); <br>
+					console.log(bar);
+				</code>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					console.log(baz); - будет выведено "5", т.к. в результате выполнения функции эта переменная станет глобальной. <br>
+					console.log(bar); - будет выведено "Uncaught ReferenceError: bar is not defined" т.к. такой переменной в Lexical scope - нету.
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="task_desc" id="task10"><h2>Задание №10</h2></div>
+			<div class="task">
+				<h2>Что будет выведено в консоль ?</h2>
+				<code>
+					(function() { <br>
+					var foo = 1; <br>
+					function bar() { <br>
+					var foo = 2; <br>
+					} <br>
+					bar(); <br>
+					console.log(foo); <br>
+					if(true) { <br>
+					var foo = 3; <br>
+					} <br>
+					console.log(foo); <br>
+					})();
+				</code>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					При первом выводе console.log(foo); - будет выведено 1, 2 - выведено не будет, т.к. у функции bar() свой личный scope. <br>
+					При втором выводе console.log(foo); - будет выведено 3. т.к. условный оператор if сработает и по скольку он не имеет своейго scope, он перезапишет глобальную переменную foo.
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="task_desc" id="task11"><h2>Задание №11</h2></div>
+			<div class="task">
+				<h2>Что будет выведено в консоль ?</h2>
+				<code>
+					var salary = "1000$"; <br>
+					(function () { <br>
+					console.log("Original salary was " + salary); <br>
+					var salary = "5000$"; <br>
+					console.log("My New Salary " + salary); <br>
+					})();
+				</code>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					console.log("Original salary was " + salary); - будет выведено: "Original salary was undefined" <br>
+					console.log("My New Salary " + salary); - будет выведено: "Original salary was 5000$", аналогично первому заданию
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="task_desc" id="task12"><h2>Задание №12</h2></div>
+			<div class="task">
+				<h2>Что будет выведено в консоль ?</h2>
+				<code>
+					for (var i = 0; i < 3; i++) { <br>
+					setTimeout(function() { console.log(i); }, 1000 + i); <br>
+					} <br>
+				</code>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					В консоль будет выведено 3 3 3, т.к. используется задержка, при помощи функции setTimeout, итерации закончатся быстрее, чем начет выполнятся выражение, которое внутри функции setTimeout.
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="task_desc" id="tests"><h2>Тестовые задания</h2></div>
+			<div class="task">
+				<h2>1. What kind of scoping does JavaScript use?</h2>
+				<span>
+					a. Literal <br>
+					b. Lexical <br>
+					c. Segmental <br>
+					d. Sequential <br>
+				</span>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					Правильный ответ: <b><i>b. Lexical</i></b>
+				</div>
+			</div>
+			<div class="task">
+				<h2>2. What must be done in order <br>to implement Lexical Scoping?</h2>
+				<span>
+					a. Get the object <br>
+					b. Dereference the current scope chain <br>
+					c. Reference the current scope chain <br>
+					d. one of the mentioned <br>
+				</span>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					Правильный ответ: <b><i>c. Reference the current scope chain</i></b>
+				</div>
+			</div>
+			<div class="task">
+				<h2>3. What is a closure?</h2>
+				<span>
+					a. Function objects <br>
+					b. Scope where function’s variables are resolved <br>
+					c. Both a and b <br>
+					d. None of the mentioned <br>
+				</span>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					Правильный ответ: <b><i>c. Both a and b</i></b>
+				</div>
+			</div>
+			<div class="task">
+				<h2>4. What is the function of the code snippet?</h2>
+				<span>
+					Consider the following code snippet : <br>
+					var scope = "global scope"; <br>
+					function checkscope() { <br>
+					var scope = "local scope"; <br>
+					function f() <br>
+					{ <br>
+					 return scope; <br>
+					} <br>
+					return f; <br>
+				</span>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					Правильный ответ: <b><i>c. Returns the value in scope </i></b>
+				</div>
+			</div>
+			<div class="task">
+				<h2>5. What is the fundamental rule <br> of lexical scoping?</h2>
+				<span>
+					a. Functions are declared in the scope <br>
+					b. Functions are executed using scope chain <br> 
+					c. Both a and b <br>
+					d. None of the mentioned <br>
+				</span>
+			</div>
+			<div class="answer">
+				<div class="btn">Узнать ответ</div>
+				<div class="answer_desc">
+					Правильный ответ: <b><i>b. Functions are executed using scope chain</i></b>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="libs/jquery/jquery.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
