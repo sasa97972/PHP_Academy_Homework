@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Object</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Lora|Oswald:200,300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,800" rel="stylesheet">
+</head>
+<body>
+	<div class="toggle_mnu">
+		<span class='sandwich'>
+			<span class='sw_topper'></span>
+			<span class='sw-bottom'></span>
+			<span class='sw-footer'></span>
+		</span>
+	</div>
+	<header class="parallax-window" data-parallax="scroll" data-image-src="img/bg.jpg" data-z-index="-1">
+		<h1>Java Script Ojects</h1>	<br>
+		<h2>Объекты в языке Java Script</h2>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#link1">Что такое объект ?</a></li>
+			<li><a href="#link2">Создание объекта, свойства</a></li>
+			<li><a href="#link3">Ассоциативные массивы</a></li>
+			<li><a href="#link4">Объекты: передача по ссылке</a></li>
+			<li><a href="#link5">Ключевое слово this</a></li>
+		</ul>
+	</nav>
+	<section>
+		<div class="section_desc">
+			<h2 id="link1">Что такое <span class="orange">объект</span> ?</h2>
+			<p> 
+				<img src="img/Cup.svg" alt="Cup" align="right" width="100px" height="100px">
+				<span class="orange">Объекты в JavaScript</span> , как и во многих других языках программирования, похожи на объекты реальной жизни. Концепцию объектов JavaScript легче понять, проводя паралелли с реально существующими в жизни объектами. <br>
+				В <span class="orange">JavaScript объект</span> — это самостоятельная единица, имеющая свойства и определенный тип. Сравним, например, с чашкой. У чашки есть цвет, форма, вес, материал, из которого она сделана, и т.д. Точно так же, объекты JavaScript имеют свойства, которые определяют их характеристики.
+			</p>
+		</div>
+	</section>
+	<section>
+		<div class="section_desc">
+			<h2 id="link2">Создание <span class="orange">объекта</span> в Java Script и его свойства</h2>
+			<p>
+				В JavaScript объект имеет свойства, ассоциированные с ним. Свойство объекта можно понимать как переменную, закрепленную за объектом. Свойства объекта в сущности являются теми же самыми переменными JavaScript, за тем исключением, что они закреплены за объектом. Свойства объекта определяют его характеристики. <br>
+				В Java script, объект может быть создан двумя способами: 
+			</p>
+			<div class="btn-slide">Показать</div>
+			<pre class="code pref">
+				<code>
+					example = new Object();
+					example = {}; // пустые фигурные скобки
+				</code>
+			</pre>
+			<p>
+				Как и все переменные JavaScript, имя объекта (которое тоже может быть переменной) и имя свойства являются чуствительными к регистру. Мы определяем свойство, просто указывая его значение. Например, создадим объект myCar и определим его свойства make, model, и year следующим образом: <br>
+			</p>
+			<div class="btn-slide">Показать</div>
+			<pre class="code pref">
+				<code>
+					var myCar = <span class="orange">new Object()</span>;
+					myCar.make = <span class="orange">"Ford"</span>;
+					myCar.model = <span class="orange">"Mustang"</span>;
+					myCar.year = <span class="orange">1969</span>;
+				</code>
+			</pre>
+			<p>Доступ к свойствам объектов JavaScript можно получить через квадратные скобки. <span class="orange">Объекты являются ассоциативными массивами</span>, так как каждое свойство ассоциировано с именем, через которое можно получить доступ к нему. Например, доступ к свойствам объекта myCar можно получить следующим образом:</p>
+			<div class="btn-slide">Показать</div>
+			<pre class="code pref">
+				<code>
+					myCar["<span class="orange">make</span>"] = "Ford";
+					myCar["<span class="orange">model</span>"] = "Mustang";
+					myCar.<span class="orange">year</span> = 1969;
+				</code>
+			</pre>
+		</div>
+	</section>
+	<section>
+		<div class="section_desc">
+			<h2 id="link3"><span class="orange">Ассоциативные массивы</span> в Java Script</h2>
+			<p>
+				Ассоциативный массив – структура данных, в которой можно хранить любые данные в формате ключ-значение. <br>
+				Её можно легко представить как шкаф с подписанными ящиками. Все данные хранятся в ящичках. По имени можно легко найти ящик и взять то значение, которое в нём лежит. 
+			</p>
+			<div class="center">
+				<img src="img/object.png" alt="object">
+			</div>
+			<p>
+				В отличие от реальных шкафов, в ассоциативный массив можно в любой момент добавить новые именованные «ящики» или удалить существующие.
+			</p>
+		</div>
+	</section>
+	<section>
+		<div class="section_desc">
+			<h2 id="link4"><span class="orange">Объекты:</span> передача по ссылке</h2>
+			<p>Фундаментальным отличием объектов от примитивов, является их хранение и копирование «по ссылке».</p>
+			<h3>Копирование по значению</h3>
+			<div class="btn-slide">Показать</div>
+			<div class="code">
+				<p>Обычные значения: строки, числа, булевы значения, null/undefined при присваивании переменных копируются целиком или, как говорят, «по значению».</p>
+				<pre class="pref">
+					<code>
+						var <span class="orange">message</span> = "Привет";
+						var <span class="orange">phrase</span> = <span class="orange">message</span>;
+					</code>
+				</pre>
+				<p>В результате такого копирования получились две полностью независимые переменные, в каждой из которых хранится значение "Привет".</p>
+				<div class="center">
+					<img src="img/variable-copy-value.png" alt="variable-copy-value">
+				</div>
+			</div>
+			<h3>Копирование по ссылке</h3>
+			<div class="btn-slide">Показать</div>
+			<div class="code">
+				<p>
+					С объектами – всё не так. <br><br>
+					В переменной, которой присвоен объект, хранится не сам объект, а «адрес его места в памяти», иными словами – «ссылка» на него. <br><br>
+					Вот как выглядит переменная, которой присвоен объект:
+				</p>
+				<div class="center">
+					<img src="img/variable-contains-reference.png" alt="variable-contains-reference">
+				</div>
+				<p>
+					Внимание: объект – вне переменной. В переменной – лишь «адрес» (ссылка) для него. <br><br>
+					При копировании переменной с объектом – копируется эта ссылка, а объект по-прежнему остается в единственном экземпляре. <br><br>
+					Например:
+				</p>
+				<pre class="pref">
+					<code>
+						var <span class="orange">user</span> = { name: "Вася" }; // в переменной - ссылка
+						var <span class="orange">admin</span> = <span class="orange">user</span>; // скопировали ссылку
+					</code>
+				</pre>
+				<p>Получили две переменные, в которых находятся ссылки на один и тот же объект:</p>
+				<div class="center">
+					<img src="img/variable-copy-reference.png" alt="variable-copy-reference">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="section_desc">
+			<h2 id="link5">Ключевое слово <span class="orange">this</span></h2>
+			<p>
+				<span class="orange">This</span> - ключевое слово, которое используется для доступа к текущему объекту из метода. <br>
+				Значением <span class="orange">this</span> является объект перед «точкой», в контексте которого вызван метод, например:
+			</p>
+			<div class="btn-slide">Показать</div>
+			<pre class="code">
+				<code>
+					var user = {
+							name: 'Василий',
+							sayHi: function() {
+							alert( <span class="orange">this</span>.name );
+							}
+					};
+					user.sayHi(); // sayHi в контексте user
+				</code>
+			</pre>
+			<p>Любая функция может иметь в себе <span class="orange">this</span>. Совершенно неважно, объявлена ли она в объекте или отдельно от него. <br><br>
+			Значение <span class="orange">this</span> называется контекстом вызова и будет определено в момент вызова функции. <br><br>
+			<i>Если одну и ту же функцию запускать в контексте разных объектов, она будет получать разный <span class="orange">this</span></i></p>
+		</div>
+	</section>
+	<script src="libs/jquery/jquery.min.js"></script>
+	<script src="libs/parallax/parallax.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
