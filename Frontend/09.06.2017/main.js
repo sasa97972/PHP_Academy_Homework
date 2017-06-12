@@ -103,7 +103,7 @@ var countH = 0;
 function second() {
 		var sec = document.getElementById('second');
 		if (countS == 59) {
-			sec.innerHTML = 00;
+			sec.innerHTML = "00";
 			countS = 00;
 		} else if (countS < 9) {
 			sec.innerHTML = "0" + ++countS;
@@ -115,7 +115,7 @@ function second() {
 function minute() {
 		var min = document.getElementById('minute');
 		if (countM == 59) {
-			min.innerHTML = 00;
+			min.innerHTML = "00";
 			countM = 0;
 		} else if (countM < 9) {
 			min.innerHTML = "0" + ++countM;
@@ -127,7 +127,7 @@ function minute() {
 function hour() {
 		var hour = document.getElementById('second');
 		if (countH == 59) {
-			hour.innerHTML = 00;
+			hour.innerHTML = "00";
 			countH = 00;
 		} else if (countH < 9) {
 			hour.innerHTML = "0" + ++countH;
