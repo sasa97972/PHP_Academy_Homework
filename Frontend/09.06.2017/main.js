@@ -104,7 +104,7 @@ function second() {
 		var sec = document.getElementById('second');
 		if (countS == 59) {
 			sec.innerHTML = "00";
-			countS = 00;
+			countS = 0;
 		} else if (countS < 9) {
 			sec.innerHTML = "0" + ++countS;
 		} else {
@@ -128,7 +128,7 @@ function hour() {
 		var hour = document.getElementById('second');
 		if (countH == 59) {
 			hour.innerHTML = "00";
-			countH = 00;
+			countH = 0;
 		} else if (countH < 9) {
 			hour.innerHTML = "0" + ++countH;
 		} else {
