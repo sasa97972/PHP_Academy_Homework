@@ -1,0 +1,157 @@
+* {
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-family: "Open Sans", sans-serif;
+}
+
+#wrapper {
+	position: relative;
+	width: 510px;
+	height: 605px;
+	margin: 30px auto;
+	text-align: center;
+}
+
+#wrapper .field {
+	background: url(img/bg.jpg);
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 305px;
+	box-shadow: 5px 2px 10px 0px rgba(0,0,0,.5);
+	border: 2px solid silver;
+	border-radius: 10px 10px 0 0;
+}
+
+#wrapper .field #random {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background: url(img/enemy.png);
+	background-size: cover;
+}
+
+#wrapper .field #target {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 25px;
+	height: 25px;
+	z-index: 3;
+	background: url(img/packman.png);
+	background-size: cover;
+}
+
+#wrapper .joypad {
+	display: flex;
+	border: 5px solid silver;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 5px 2px 10px 0px rgba(0,0,0,.5);
+	background: linear-gradient(to bottom,#e3e3e4,#f8f7f7 3%,#f8f7f7 97%,#e3e3e4),#f8f7f7;
+}
+
+#wrapper .joypad .moveButton,
+#wrapper .joypad .colorButton {
+	width: 250px;
+	text-align: center;
+}
+
+#wrapper #keyboard {
+	margin: 10px 0;
+	padding: 10px 20px;
+	background-color: #f8f7f7;
+	border-radius: 5px;
+	outline: none;
+}
+
+#wrapper #keyboardDescr {
+	color: red;
+	visibility: hidden;
+}
+
+#wrapper .result_descr,
+#wrapper .timer,
+#wrapper #startGame {
+	position: absolute;
+	width: 300px;
+	background: linear-gradient(to bottom,#e3e3e4,#f8f7f7 3%,#f8f7f7 97%,#e3e3e4),#f8f7f7;
+	border-top: 2px solid silver;
+	border-right: 2px solid silver;
+	border-bottom: 2px solid silver;
+	border-radius: 5px;
+}
+
+#wrapper .result_descr {
+	top: 5px;
+	right: -301px;
+}
+
+#wrapper .timer {
+	top: 71px;
+	right: -301px;
+}
+
+#wrapper #startGame {
+	padding: 20px;
+	top: 137px;
+	right: -301px;
+	color: orange;
+	font-weight: 600;
+}
+
+#wrapper #startGame:hover {
+	cursor: pointer;
+	color: red;
+}
+
+#wrapper .result_descr #result {
+	color: red;
+}
+
+#wrapper .rule {
+	text-align: left;
+}
+
+/*moveButton*/
+#wrapper .joypad .moveButton {
+	border-right: 2.5px solid silver;
+}
+
+#wrapper .joypad .moveButton button {
+	margin: 5px 20px;
+	border-radius: 5px;
+	outline: none;
+}
+
+#wrapper .joypad .moveButton button:nth-child(4){
+	transform: rotate(270deg);
+}
+
+#wrapper .joypad .moveButton button:nth-child(5){
+	transform: rotate(90deg);
+}
+
+#wrapper .joypad .moveButton button:nth-child(7){
+	transform: rotate(180deg);
+}
+
+/*colorButton*/
+#wrapper .joypad .colorButton {
+	border-left: 2.5px solid silver;
+}
+
+#wrapper .joypad .colorButton button{
+	padding: 15px;
+}
+
+
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Input Filter</title>
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+		<div class="wrap-form">
+			<form action="" method="post">
+					<h2>Введите ваши данные</h2>
+					<p>
+						<input type="text" id="name" name="name" placeholder="Ваше имя" data-chars-allowed="абвгдеёжзиыйклмнопрстуфхцчэюя" data-message-id="firstNameError" />
+        				<div id="firstNameError">В имени допускаются только буквы русского алфавита!</div>
+					</p>
+					<p>
+						<input type="text" id="pNumber" name="pNumber" placeholder="Ваш телефон" data-chars-allowed="0123456789" data-message-id="NumError">
+						<div id="NumError">В номере допускаются только цифры!</div>
+					</p>
+			</form>
+		</div>
+	</div>
+	<script src="main.js"></script>
+</body>
+</html>

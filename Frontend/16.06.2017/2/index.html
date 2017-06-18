@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Move</title>
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
+</head>
+<body id="main">
+	<div id="wrapper">
+		<div class="field">
+			<div id="target"></div>
+		</div>
+		<div class="joypad">
+			<div class="moveButton">
+				<h3>Клавиши управления</h3>
+				<button value="top"><img src="img/arrow.png" alt="arrow" width="25px" height="25px"></button><br>
+				<button value="left"><img src="img/arrow.png" alt="arrow" width="25px" height="25px"></button>
+				<button value="rigth"><img src="img/arrow.png" alt="arrow" width="25px" height="25px"></button><br>
+				<button value="bottom"><img src="img/arrow.png" alt="arrow" width="25px" height="25px"></button>
+			</div>
+			<div class="colorButton">
+				<h3>Выберите цвет</h3>
+				<button value="red">R</button>
+				<button value="green">G</button>
+				<button value="blue">B</button>
+			</div>
+		</div>
+		<button id="keyboard">Включить управление клавиатурой</button>
+		<div id="keyboardDescr"><p>Используйте стрелки для передвижения</p></div>
+		<div class="rule">
+			<h2>Правила игры:</h2>
+			<ol>
+				<li>У вас есть ограниченное время, если время закончится, вы проиграете</li>
+				<li>Чтобы добавить время и заработать очки, нужно ловить фиолетовые кубики</li>
+				<li>Выходить за пределы игровой зоны - нельзя, вы проиграете</li>
+				<li>Подсказка: лучше включить клавиатуру</li>
+			</ol>
+		</div>
+		<div class="result_descr">
+			<p id="result">Вы набрали: 0 points</p>
+		</div>
+		<div class="timer">
+			<p>У вас осталось <span id="timerResult">5</span> секунд</p>
+		</div>
+		<div id="startGame">
+			СТАРТ
+		</div>
+	</div>
+	<script src="main.js"></script>
+</body>
+</html>
