@@ -2,28 +2,25 @@ window.addEventListener("load", init, false);
 
 function init() {
     document.getElementById('run').addEventListener("mouseover", changePosition, false);
-    document.getElementById('run').addEventListener("mouseout", changePosition, false);
-    document.getElementById('run').addEventListener("click", done, false);
     document.getElementById('surrender').addEventListener("mouseover", changePosition, false);
-    document.getElementById('surrender').addEventListener("mouseout", changePosition, false);
-    document.getElementById('surrender').addEventListener("click", final, false);
     givePosition();
     return true;
 }
 
 function changePosition() {
+    var parent = document.getElementById('wrapper');
     var rand = getRandomInt(1,4);
-    if(this.offsetTop < 148) {
+    if(this.offsetTop > parent.offsetHeight - this.offsetHeight) {
+       rand = 2; 
+    } 
+    if(this.offsetTop < this.offsetHeight) {
         rand = 4;
     }
-    if(this.offsetTop > 652) {
-        rand = 2;
-    }
-    if(this.offsetLeft < 148) {
-        rand = 3;
-    }
-    if (this.offsetLeft > 1252) {
+    if (this.offsetLeft > parent.offsetWidth - this.offsetWidth) {
         rand = 1;
+    }
+    if (this.offsetLeft < this.offsetWidth) {
+        rand = 3;
     }
     switch (rand) {
         case 1: 
@@ -42,18 +39,6 @@ function changePosition() {
     return true;
 }
 
-function done() {
-    alert("Поздравляем, вам удалось получить скидку!");
-   if (confirm("Попробовать ещё раз ?")) {
-            givePosition();
-            return true; 
-    } else {
-        final();
-        return false;
-    }
-}
-
-
 function givePosition() {
     document.getElementById('run').style.top = "500px"; 
     document.getElementById('run').style.left = "500px";
@@ -62,20 +47,6 @@ function givePosition() {
     return true;
 }
 
-function final() {
-    document.getElementById('run').removeEventListener("mouseover", changePosition, false);
-    document.getElementById('run').removeEventListener("mouseout", changePosition, false);
-    document.getElementById('run').removeEventListener("click", done, false);
-    document.getElementById('mood').innerHTML = ";(";
-    document.getElementById('run').style.display = "none";
-    document.getElementById('surrender').style.display = "none";
-    return false;
-}
-
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
-
-
