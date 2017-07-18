@@ -1,0 +1,173 @@
+@media only screen and (max-width : 768px) {
+	/*--------General styles--------*/
+	body {
+		font-size: 14px;
+	}
+
+	.box-wrapper {
+		width: 100%;
+	}
+
+	/*--------Header--------*/
+	header > .box-wrapper h1 {
+		width: 80%;
+		text-align: center;
+	}
+
+	/*--------Menu--------*/
+	nav {
+		height: auto;
+		flex-flow: column wrap;
+	}
+
+	nav ul {
+		display: none;
+		background: rgba(0,0,0,.8);
+	}
+
+	nav ul li {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		text-transform: uppercase;
+	}
+
+	/*--------Responsive menu--------*/
+	.toggle_mnu {
+		display: block;
+	}
+
+	/*--------Sections--------*/
+	section .box-wrapper .section-content {
+		flex-flow: column wrap;
+	}
+
+	section .box-wrapper .section-content .content-part {
+    	width: 100%;
+    	padding: 10px;
+	}
+
+	section .box-wrapper .section-content .my-photo {
+		text-align: center;
+	}
+
+	section#experience .box-wrapper .content-wrapper {
+		flex-flow: column wrap;
+		align-items: center;
+	}
+
+	section .box-wrapper .section-content.boxes:nth-child(1) {
+		margin: 0 0 10px 0;
+	}
+
+	section .box-wrapper .section-content.boxes {
+		width: 90%;
+	}
+
+	section#letter {
+		padding: 10px;
+	}
+
+	/*--------Form--------*/
+	form input[type=text] {
+		width: 50%;
+	}
+
+	/*--------Footer--------*/
+	footer {
+		padding-left: 15px;
+	}
+
+	/*--------Owl-carousel--------*/
+	.owl-prev,
+	.owl-next {
+		top: 5px;
+	}
+
+	.owl-carousel .animated {
+		min-height: 400px;
+		padding: 5px;
+	}
+}
+
+@media only screen and (max-height : 500px) {
+	/*--------General styles--------*/
+	body {
+		font-size: 14px;
+	}
+
+	.box-wrapper {
+		width: 100%;
+	}
+
+	/*--------Header--------*/
+	header > .box-wrapper h1 {
+		width: 80%;
+		text-align: center;
+	}
+
+	/*--------Menu--------*/
+	nav {
+		height: auto;
+		flex-flow: column wrap;
+	}
+
+	nav ul {
+		display: none;
+		background: rgba(0,0,0,.8);
+	}
+
+	nav ul li {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		text-transform: uppercase;
+	}
+
+	/*--------Responsive menu--------*/
+	.toggle_mnu {
+		display: block;
+	}
+
+	/*--------Sections--------*/
+	section .box-wrapper .section-content {
+		flex-flow: column wrap;
+	}
+
+	section .box-wrapper .section-content .content-part {
+    	width: 100%;
+    	padding: 10px;
+	}
+
+	section .box-wrapper .section-content .my-photo {
+		text-align: center;
+	}
+
+	section#experience .box-wrapper .content-wrapper {
+		flex-flow: column wrap;
+		align-items: center;
+	}
+
+	section .box-wrapper .section-content.boxes:nth-child(1) {
+		margin: 0 0 10px 0;
+	}
+
+	section .box-wrapper .section-content.boxes {
+		width: 90%;
+	}
+
+	section#letter {
+		padding: 10px;
+	}
+
+	/*--------Owl-carousel--------*/
+	.owl-prev,
+	.owl-next {
+		top: 5px;
+	}
+
+	.owl-carousel .animated {
+		min-height: 300px;
+		padding: 5px;
+	}
+}
