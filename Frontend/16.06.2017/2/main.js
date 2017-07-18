@@ -1,11 +1,15 @@
 window.addEventListener("load", initStart, false);
 
+var colorButton = document.querySelectorAll(".colorButton button"),
+	keyboardControll = 0,
+	GameTime = 0,
+	count = 0;
+	element = undefined;
+
 function initStart() {
-    keyboardControll = 0;
     document.getElementById('startGame').addEventListener("click", startButton, false);
     document.getElementById('keyboard').addEventListener("click", keyboard, false);
 
-    colorButton = document.querySelectorAll(".colorButton button");
     if(colorButton) {
         for(let i = 0; i < colorButton.length; i++) {
             colorButton[i].addEventListener("click", changeColor, false);
@@ -27,7 +31,7 @@ function startButton() {
 }
 
 function init() {
-    element = document.getElementById('target');
+	element = document.getElementById('target');
     if (!element) {return false};
 
     moveButton = document.querySelectorAll(".moveButton button");
@@ -39,10 +43,10 @@ function init() {
     }
 
     if(document.getElementById('random')) {removeRandom();}
-    count = 0;
+    
     randDiv();
 
-    GameTime = 5;
+	GameTime = 5;
     document.getElementById('timerResult').innerHTML = GameTime;
     GameTimer = setInterval(timer, 1000);
 
@@ -57,9 +61,10 @@ function changeColor() {
 
 function movePosition(e) {
     var direction = this.value;
+    var pos = 0;
     switch(direction){
         case("rigth"):
-            var pos = element.offsetLeft + 10;
+            pos = element.offsetLeft + 10;
             if (element.offsetLeft >= 480) {
                 e.preventDefault();
                 gameOver(); 
@@ -68,7 +73,7 @@ function movePosition(e) {
             element.style.left = pos + "px";
             break;
         case("left"):
-            var pos = element.offsetLeft - 10;
+            pos = element.offsetLeft - 10;
             if (element.offsetLeft <= 0) {
                 e.preventDefault();
                 gameOver(); 
@@ -77,7 +82,7 @@ function movePosition(e) {
             element.style.left = pos + "px";
             break;
         case("top"):
-            var pos = element.offsetTop - 10;
+            pos = element.offsetTop - 10;
             if (element.offsetTop <= 10) {
                 e.preventDefault();
                 gameOver(); 
@@ -86,7 +91,7 @@ function movePosition(e) {
             element.style.top = pos + "px";
             break;
         case("bottom"):
-            var pos = element.offsetTop + 10;
+            pos = element.offsetTop + 10;
             if (element.offsetTop >= 270) {
                 e.preventDefault();
                 gameOver(); 
