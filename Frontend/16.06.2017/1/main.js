@@ -34,7 +34,6 @@ function keyFilter(e) {
             element = document.getElementById(element);
             element.style.visibility = "visible";
         }
-        e.preventDefault();
         return false;
     }
     else {
