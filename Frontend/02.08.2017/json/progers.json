@@ -1,0 +1,46 @@
+[
+  {
+    "firstname": "Nataliia",
+    "secondname" : "Matkivska",
+    "age": 22,
+    "jobtitle": "Software Developer",
+    "specialization": "FE",
+    "skills": {
+      "strong": ["HTML", "CSS", "JS"],
+      "basic": ["C++", "C#", "Computer Networking"]
+    }
+  },
+  {
+    "firstname": "Alexandr",
+    "secondname" : "Dulya",
+    "age": 20,
+    "jobtitle": "Software Developer",
+    "specialization": "FS",
+    "skills": {
+      "strong": ["HTML", "CSS", "JS", "PHP", "MySQL"],
+      "basic": ["C++"]
+    }
+  },
+  {
+    "firstname": "Ivan",
+    "secondname" : "Ivanov",
+    "age": 45,
+    "jobtitle": "Software Developer",
+    "specialization": "BE",
+    "skills": {
+      "strong": ["PHP", "MySQL"],
+      "basic": ["HTML", "CSS"]
+    }
+  },
+  {
+    "firstname": "Roman",
+    "secondname" : "Avramenko",
+    "age": 31,
+    "jobtitle": "Web Developer",
+    "specialization": "NodeJS",
+    "skills": {
+      "strong": ["JS", "NodeJS"],
+      "basic": ["HTML", "CSS"]
+    }
+  }
+]
