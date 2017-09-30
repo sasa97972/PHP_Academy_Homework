@@ -1,0 +1,85 @@
+body {
+    padding-top: 100px;
+}
+
+.navbar {
+    background-color: #563d7c;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+}
+
+img {
+    width: 150px;
+    height: auto;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.hero {
+    color: #ffe484;
+}
+
+.form-inline {
+    margin-left: auto;
+}
+
+.form-inline > .btn {
+    color: #ffe484;
+    border-color: #ffe484;
+}
+
+.form-inline > .btn:hover {
+    background-color: #ffe484;
+    color: #563d7c;
+}
+
+.row {
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #ffe484;
+}
+
+.thumbnail {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.caption {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+}
+
+.btn_down {
+    margin-top: auto;
+}
+
+.card + .card {
+    margin-left: 30px;
+}
+
+.footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background-color: #563d7c;
+    color: #ffe484;
+}
+
+.email {
+    margin: 0;
+}
+
+.github:link,
+.github:visited {
+    color: #ffe484;
+}
