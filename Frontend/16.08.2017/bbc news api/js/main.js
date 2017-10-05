@@ -7,7 +7,7 @@ function init () {
 var api = {
 
 	start: function () {
-		this.url = "https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=ca473cb09a264124a90c46ec1689f664";
+		this.url = "https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=73b5567dd14c4d65b6fa10c4eb35cf1b";
 		this.xhttp = new XMLHttpRequest();
 		this._getAPI();
 	},
