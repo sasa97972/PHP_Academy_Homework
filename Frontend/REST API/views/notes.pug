@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1.notes__title= title
+  p.notes__title Create your note!
+  form#createNotes(method="post", action="/notes")
+    div.form-group
+      label(for="title") Title
+      input(type="text", class="form-control", id="title", placeholder="Title" name="title")
+    div.form-group
+      label(for="description") Description
+      input(type="text", class="form-control", id="description", placeholder="Description" name="description")
+    div.form-group
+      input(type="submit")
+  h2.notes__title Below you can see all notes
+  div.row.notes__collection#notesCollection
