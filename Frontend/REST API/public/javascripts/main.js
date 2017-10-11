@@ -28,8 +28,8 @@ $(document).ready(function () {
                     "<input type='submit' class='btn__update' value='Save'>" +
                     "</form>";
                 parent.html(tmpl);
-                $(".updateNote").on("click", function () {
-                    updateNote($(this));
+                $(".btn__update").on("click", function () {
+                    updateNote($(this).parent());
                     return false;
                 })
             },
