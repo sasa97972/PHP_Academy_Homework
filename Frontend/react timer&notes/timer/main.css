@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Nosifer');
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family:'Nosifer', cursive;;
+    background-color: black;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.timer {
+    text-align: center;
+}
+
+.timer__title {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 120px;
+    letter-spacing: 20px;
+    color: red;
+    margin-bottom: 40px;
+}
+
+.timer__container {
+    display: block;
+    font-size: 70px;
+    color: darkred;
+    margin-bottom: 20px;
+}
+
+.timer__btn {
+    width: 50%;
+}
+
