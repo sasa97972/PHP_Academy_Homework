@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <form class="form-group" action="admin/comments/edit" method="post">
+            <input type="hidden" name="id_comment" value='<?=$data["comment"]["id"]?>'/><br/>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <textarea name="content" class="form-control" placeholder="Comment"><?=$data["comment"]['content']?></textarea><br/>
+            </div>
+            <input type="submit" name="update_comment" value="Edit" class="btn btn-success btn-block">
+        </form>
+    </div>
+</div>

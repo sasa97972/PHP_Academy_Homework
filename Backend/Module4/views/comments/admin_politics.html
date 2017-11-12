@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Current news</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Content</th>
+            <th>Positive</th>
+            <th>Negative</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($data['comments'] as $comment): ?>
+        <tr>
+            <td class="col-md-1"><?=$comment['id']?></td>
+            <td class="col-md-2"><?=$comment['user']?></td>
+            <td class="col-md-2"><?=$comment['content']?></td>
+            <td class="col-md-1"><?=$comment['positive']?></td>
+            <td class="col-md-1"><?=$comment['negative']?></td>
+            <td class="col-md-3">
+                <div class="pull-right">
+                    <a href="admin/comments/publish/<?=$comment['id']?>" class="btn btn-info">Publish</a>
+                    <a href="admin/comments/edit/<?=$comment['id']?>" class="btn btn-warning">Edit</a>
+                    <a href="admin/comments/delete/<?=$comment['id']?>" class="btn btn-danger">Delete</a>
+                </div>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

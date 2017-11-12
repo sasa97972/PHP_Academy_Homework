@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <?php foreach($data['news'] as $news) { ?>
+        <div class="col-md-2 well">
+            <h2><?=$news['tittle']?></h2>
+            <p><?=$news['date']?></p>
+            <h4><a href="posts/view/<?=$news['id']?>">Read</a></h4>
+            <?php $tags = explode (',', $news['tags']) ?>
+            <?php foreach ($tags as $tag): ?>
+            <a href="posts/tag/<?=$tag?>"><span class="badge"><?=$tag?></span></a>
+            <?php endforeach; ?>
+        </div>
+        <?php } ?>
+    </div>
+</div>
+<div style="text-align: center">
+    <ul class="pagination">
+        <?php $pages = ceil($data['count'][0]['num']/5);?>
+        <?php if($pages >= 1): ?>
+        <li><a href="<?=$data['uri']?>/1">1</a></li>
+        <?php if($pages > 2): ?>
+        <li>
+            <span class="show-pagination">...</span>
+            <ul class="advance-pagination" style="display: none">
+                <?php for($i = 2; $i < $pages; $i++): ?>
+                <li><a href="<?=$data['uri']?>/<?=$i?>"><?=$i?></a></li>
+                <?php endfor; ?>
+            </ul>
+        </li>
+        <?php endif; ?>
+        <?php if($pages > 1): ?>
+        <li><a href="<?=$data['uri']?>/<?=$pages?>"><?=$pages?></a></li>
+        <?php endif; ?>
+        <?php endif; ?>
+    </ul>
+</div>
+<script type="text/javascript">
+    $('.show-pagination').on("click",function() {
+        $(this).css("display", "none");
+        $('.advance-pagination').fadeIn(500);
+    });
+</script>
+

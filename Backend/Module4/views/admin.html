@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="<?=Helper::getBasePath()?>">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="webroot/bootstrap/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="webroot/bootstrap/css/bootstrap-theme.min.css">
+    <title><?=Config::get('site_name')?></title>
+</head>
+<body>
+<nav style="background-color: <?=Session::get('site_color')?>" class="navbar navbar-default fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="admin/panel" class="navbar-brand"><?=Config::get('site_name')?>  Admin panel</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="navbar-form navbar-right">
+                <?php if (Session::get('login')){ ?>
+                <a href="users/logout" class="btn btn-warning">Logout (<?=Session::get('login')?>)</a>
+                <?php }else{ ?>
+                <button class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#Login">Login</button>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</nav>
+<br/>
+    <?=$data['content']?>
+
+</body>
+</html>

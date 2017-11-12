@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="<?=Helper::getBasePath()?>">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="webroot/bootstrap/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="webroot/bootstrap/css/bootstrap-theme.min.css">
+
+    <!-- Owl stylesheet -->
+    <link rel="stylesheet" href="webroot/assets/owl-carousel/owl.carousel.css" >
+    <link rel="stylesheet" href="webroot/assets/owl-carousel/owl.theme.css" >
+
+    <!-- jQuery -->
+    <script src="webroot/js/jquery-3.2.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="webroot/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="webroot/source/script.js" ></script>
+
+    <!-- slitslider -->
+    <link rel="stylesheet" type="text/css" href="webroot/source/slitslider/css/style.css"  />
+    <link rel="stylesheet" type="text/css" href="webroot/source/slitslider/css/custom.css"  />
+    <script type="text/javascript" src="webroot/source/slitslider/js/modernizr.custom.79639.js" ></script>
+    <script type="text/javascript" src="webroot/source/slitslider/js/jquery.ba-cond.min.js" ></script>
+    <script type="text/javascript" src="webroot/source/slitslider/js/jquery.slitslider.js" ></script>
+    <script src="webroot/assets/owl-carousel/owl.carousel.js" ></script>
+    <!-- slitslider -->
+
+    <link rel="stylesheet" href="webroot/css/style.css">
+
+    <title><?=Config::get('site_name')?></title>
+</head>
+<body style="background-color: <?=Session::get('site_color')?>">
+
+<nav class="navbar navbar-default fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="" class="navbar-brand"><?=Config::get('site_name')?></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="navbar-form navbar-left">
+                <form method="post"><input type="text" id="search" class="form-control" placeholder="Search"></form>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="navbar-form navbar-right">
+                <?php if (Session::get('login')){ ?>
+                <a href="users/logout" class="btn btn-warning">Logout (<?=Session::get('login')?>)</a>
+                <?php }else{ ?>
+                <button class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#Login">Login</button>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div id="Login" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-body">
+            <button class="close" data-dismiss="modal">x</button><br/><br/>
+            <form action="users/login" method="post">
+            <p><input type="text" class="form-control" name="login" placeholder="Login"></p>
+            <p><input type="password" class="form-control" name="password" placeholder="Password"></p>
+            <p><input type="submit" class="btn btn-success btn-block" value="Login"></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="Register" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-body">
+            <button class="close" data-dismiss="modal">x</button><br/><br/>
+            <form action="users/register" method="post">
+                <p><input type="text" class="form-control" name="login" placeholder="Login"></p>
+                <p><input type="email" class="form-control" name="email" placeholder="Email"></p>
+                <p><input type="password" class="form-control" name="password" placeholder="Password"></p>
+                <p><input type="submit" class="btn btn-success btn-block" value="Register"></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="Subscribe" class="modal modal-subscribe">
+    <div class="modal-dialog">
+        <div class="modal-body">
+            <button class="close" data-dismiss="modal">x</button><br/><br/>
+            <h2 style="color: #fff">Subscribe for Newsletter!</h2>
+            <form action="<?=Helper::getBasePath()?>" method="post">
+                <p><input type="text" class="form-control" name="name" placeholder="Name"></p>
+                <p><input type="email" class="form-control" name="email" placeholder="Email"></p>
+                <p><input type="submit" class="btn btn-success btn-block" value="Subscribe"></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container" hidden id="block">
+    <h4>Maybe you are finding:</h4>
+    <span id="resultNames"></span>
+    <span id="resultTags"></span>
+</div>
+<br/>
+
+    <?=$data['content']?>
+
+<footer class="footer container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 footer__content">
+                <div class="footer__text">
+                    <p>&copy; All right reserved</p>
+                    <p>Alexandr Dulya</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#search').on('input', function() {
+            var searchKeyword = $(this).val();
+            if (searchKeyword.length >= 3) {
+                $('#block').fadeIn();
+                $.ajax({
+                    type: 'POST',
+                    url: "<?=Helper::getBasePath()?>posts/search",
+                    data: {
+                        keywords: searchKeyword
+                    },
+                    success: function (data) {
+                        var result = $.parseJSON(data);
+                        var news = result.names;
+                        if(news.length) {
+                            var namesLinks = "";
+                            namesLinks += "<h5>News:</h5>"
+                            for(var i = 0; i < news.length; i++) {
+                                namesLinks += '<a href = "<?=Helper::getBasePath()?>posts/view/' + news[i].id + '" class="tags-search badge">' + news[i].tittle + '</a>';
+                            }
+                        } else {
+                            namesLinks = "<span>There aren't any news for your query</span><br>";
+                        }
+                        $('#resultNames').html(namesLinks);
+                        var tags = result.tags;
+                        if(tags.length) {
+                            var tagsLinks = "";
+                            tagsLinks += "<h5>Tags:</h5>";
+                            for(var i = 0; i < tags.length; i++) {
+                                tagsLinks += '<a href = "<?=Helper::getBasePath()?>posts/tag/' + tags[i] + '" class="tags-search badge">' + tags[i] + '</a>';
+                            }
+                        } else {
+                            tagsLinks = "<span>There aren't any tags for your query</span>";
+                        }
+                        $('#resultTags').html(tagsLinks);
+                    }
+                });
+            }else{
+                $('#block').fadeOut();
+            }
+        });
+        $('[data-toggle="tooltip"]').tooltip ();
+        window.setTimeout(function () {
+            $("#Subscribe").fadeIn(500, function () {
+                var _this = $(this);
+                $(".close").on("click", function () {
+                    _this.fadeOut(500);
+                })
+            });
+        }, 8000)
+    });
+
+    /*window.onbeforeunload = function(e) {
+        if (confirm("Are you sure ?")) {
+            return true;
+        } else {
+            e.preventDefault();
+            return false;
+        }
+    }*/
+</script>
+
+</body>
+</html>
